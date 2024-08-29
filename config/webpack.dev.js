@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { baseOptions, getBanner } = require('./webpack.config.base')
+const { baseOptions, getBanner } = require('./webpack.config.base.js')
 const devBanner = require('./dev.meta.js')
 const fs = require('fs')
 const outputPath = path.resolve(__dirname, '../dist/dev')

@@ -1,5 +1,5 @@
-import app from '@/app'
-
+import app from '@/Src_BulkTrade/BulkCreate'
+//import app from '@/trans'
 if (PRODUCTION) {
   app()
 } else {
