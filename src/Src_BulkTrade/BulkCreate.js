@@ -1,6 +1,6 @@
 const app = () => {
   const Invoice_APPID = 276
-
+  //!!!!!!!!!!!!!Not Completed!!!!!!!!!!!!!!!!!!
   //Init arr for committing to invoice app
   kintone.events.on('app.record.create.submit.success', async function (event) {
     var record = event.record
@@ -43,13 +43,30 @@ const app = () => {
       console.log(JSON.stringify(extracted_arr))
       return extracted_arr
     }
-    function TradeDebtorInvoiceClass(invoice_no) {
-      this.trans_no.value = trans_no
-      this.settle_date.value = settle_date
-      this.invoice_no.value = invoice_no
-      this.alloc_amt.value = 0
-    }
+
     //TODO: Create one invoice settlement record for each array element, alloc_amt = 0
   })
+
+  function TradeDebtorInvoiceClass(invoice_no) {
+    this.trans_no.value = trans_no
+    this.settle_date.value = settle_date
+    this.invoice_no.value = invoice_no
+    this.alloc_amt.value = 0
+  }
+  //helper function:auto-create an undefined parent when trying to set its children property
+  function autovivify() {
+    return new Proxy(
+      {},
+      {
+        get: (target, name) => {
+          if (name === 'toJSON') {
+            return () => target
+          } else {
+            return name in target ? target[name] : (target[name] = autovivify())
+          }
+        },
+      },
+    )
+  }
 }
 export default app

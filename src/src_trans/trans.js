@@ -29,7 +29,7 @@ kintone.events.on(trigger_event, function (ev) {
 })
 
 //Check Balance = 0 or cancel submit
-var trigger_event = ['app.record.create.submit', 'app.record.edit.submit']
+var trigger_event = ['app.record.crevate.submit', 'app.record.edit.submit']
 kintone.events.on(trigger_event, function (ev) {
   var record = ev.record
   if (record.Balance.value != 0) {

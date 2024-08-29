@@ -7,7 +7,7 @@
     "start": "webpack serve --config ./config/webpack.dev.js",
     "dev": "webpack --watch --config ./config/webpack.dev.js",
     "build": "yarn lint:fix && webpack --config ./config/webpack.prod.js --env filename=app.user.js",
-    "lint": "eslint --ext .ts --ext .tsx src/",
+    "lint": "eslint --ext .ts --ext .tsx --ext .js src/",
     "lint:fix": "yarn lint --fix"
   },
   "repository": {
@@ -27,11 +27,12 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
+    "@cybozu/eslint-config": "^23.0.0",
     "@types/tampermonkey": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "babel-loader": "^8.2.4",
-    "eslint": "^8.13.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-prettier": "^4.0.0",
